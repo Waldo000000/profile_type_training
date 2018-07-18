@@ -1,0 +1,6 @@
+profile_type_training.csv.gz
+.idea/*
+profile_type_training.csv
+profile_type_training.jsonl
+.ipynb*
+clf.pkl
