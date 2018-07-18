@@ -3,21 +3,15 @@ A model and API for classifying profiles as brands, influencers, or news and med
 
 ## Findings
 * The training process is described in [this notebook](profile_type_training.ipynb).
-* Using the provided data, I achieved 86.5% classification accuracy on a held-out test set, with features extracted from the profile biographies alone.
+* Using the training data (which is not publicly available; sorry), I achieved 86.5% classification accuracy on a held-out test set, with features extracted from the profile biographies alone.
 * The training approach taken was fairly simple (i.e. 'bag of words' and linear classifier), and only took a few minutes of computation on my stock laptop.
 
 ## Using the API
-The profile classification model was deployed to a corresponding API ([source code and documentation available here](https://github.com/Waldo000000/profile_type_api)). 
-
-
-The endpoint is available on Heroku here:
-```
-https://ancient-castle-15317.herokuapp.com/profile
-```
-It can be invoked by posting profile information to the endpoint, for example, as follows:
+The profile classification model can easily be deployed to a API [as described here](https://github.com/Waldo000000/profile_type_api)). 
+It can then be invoked by posting profile information to the API endpoint, for example, as follows:
 ```
 curl -X POST \
-  https://ancient-castle-15317.herokuapp.com/profile \
+  https://the-deployed-api-endpoint/profile \
   -H 'Content-Type: application/json' \
   -d '[
     {
@@ -29,7 +23,7 @@ curl -X POST \
 ```
 
 ## Using the trained model
-The trained model is available for [download via Google Drive here](https://drive.google.com/file/d/1EWrjN9o3F53An2jmP62Xctt1Zdl5vnYu/view).
+The trained model is [stored on via Google Drive here](https://drive.google.com/file/d/1EWrjN9o3F53An2jmP62Xctt1Zdl5vnYu/view) (but is not publicly available; sorry).
 
 Once downloaded, the model can be loaded and used for estimation as follows, by providing a profile biography (note: requires Python 3):
 
